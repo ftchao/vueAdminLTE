@@ -1,23 +1,25 @@
 <template>
   <div id="app" class="wrapper">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <my-header></my-header>
+    <my-aside></my-aside>
+    <div class="content-wrapper">
+      <router-view></router-view>
+    </div>
+    
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
+import myHeader from './components/layout/header.vue'
+import myAside from './components/layout/aside.vue'
+import myFooter from './components/layout/footer.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    myHeader,
+    myAside,
+    myFooter
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
